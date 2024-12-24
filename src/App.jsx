@@ -3,6 +3,7 @@ import Header from './Pages/Header'
 import Catagory from './Pages/Catagory'
 import About from './Pages/about'
 import Title from './component/title'
+import Footer from './component/footer'
 import './App.css'
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Header />
       <About />
       <Catagory />
+      <Footer/>
       
 
     </>
