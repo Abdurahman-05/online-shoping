@@ -1,7 +1,8 @@
 import React from "react";
-import p1 from "./assets/p1.png";
-import p2 from "./assets/p22.png";
-import p3 from "./assets/p3.png";
+import p1 from "../assets/p1.png";
+import p2 from "../assets/p22.png";
+import p3 from "../assets/p3.png";
+
 const Catagory = () => {
   return (
     <div className="py-20 px-10  bg-gray-200 my-7 flex flex-col justify-center relative items-center">

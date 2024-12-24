@@ -1,10 +1,10 @@
 import React from "react";
 import { useState } from "react";
-import Logo from "./assets/Logo.jpg";
-import cart from "./assets/Cart.svg";
-import user from "./assets/user.png";
-import bg from "./assets/bg1.jpg";
-import search from "./assets/search.svg";
+import Logo from "../assets/Logo.jpg";
+import cart from "../assets/Cart.svg";
+import user from "../assets/user.png";
+import bg from "../assets/bg1.jpg";
+import search from "../assets/search.svg";
 
 const data = [
   { name: "Home", link: "#", id: 1 },

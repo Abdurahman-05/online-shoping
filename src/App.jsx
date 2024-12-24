@@ -1,6 +1,8 @@
 import { useState } from 'react'
-import Header from './Header'
-import About from './Catagory'
+import Header from './Pages/Header'
+import Catagory from './Pages/Catagory'
+import About from './Pages/about'
+import Title from './component/title'
 import './App.css'
 
 function App() {
@@ -8,8 +10,11 @@ function App() {
 
   return (
     <>
-      <Header ></Header>
-      <About></About>
+      <Header />
+      <About />
+      <Catagory />
+      
+
     </>
   )
 }
