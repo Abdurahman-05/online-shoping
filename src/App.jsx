@@ -1,16 +1,19 @@
-import { useState } from 'react'
-import Header from './Header'
-import About from './Catagory'
+import Header from './Pages/Header'
+import About from './Pages/Catagory'
+import Footer from './component/footer'
 import './App.css'
 import NavBar from './navBar'
+import UserDetails from './Pages/UserDetails'
 
 function App() {
   
 
   return (
     <>
-      <Header ></Header>
+      {/* <Header ></Header>
       <About></About>
+      <Footer /> */}
+      <UserDetails />
     </>
   )
 }
