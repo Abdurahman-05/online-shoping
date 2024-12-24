@@ -1,10 +1,10 @@
 import React from "react";
 import { useState } from "react";
-import Logo from "./assets/Logo.jpg";
-import cart from "./assets/Cart.svg";
-import user from "./assets/user.png";
-import bg from "./assets/bg1.jpg";
-import search from "./assets/search.svg";
+import Logo from "../assets/Logo.jpg";
+import cart from "../assets/Cart.svg";
+import user from "../assets/user.png";
+import bg from "../assets/bg1.jpg";
+import search from "../assets/search.svg";
 
 const data = [
   { name: "Home", link: "#", id: 1 },
@@ -22,7 +22,7 @@ const Header = () => {
         style={{ backgroundImage: `url(${bg})` }}
       >
         <div className="h-16 bg-transparent flex items-center justify-around">
-          <div className="text-2xl text-black font-extrabold  ">Ecommerce</div>
+          <div className="text-2xl text-[#2C3E50] font-extrabold  ">Ecommerce</div>
           <div>
             <ul className="lg:flex text-white font-medium space-x-6 hidden ">
               {data.map((item) => (
@@ -63,27 +63,25 @@ const Header = () => {
               </button>
             </div>
           </div>
-
-
         </div>
         <div className="h-fit sm-fit mt-10 gap-6 flex justify-end lg:pr-10">
-        <div className="w-full lg:w-1/2 max-md:md-auto bg-black bg-opacity-50 p-20 gap-8 flex flex-col rounded-lg max-w-3xl">
-          <h1 className="text-4xl md:text-6xl font-bold text-white ">
-            Discover the Latest Trends
-          </h1>
-          <p className="text-lg md:text-2xl font-medium text-gray-200 mt-8 ">
-            Shop the best deals on fashion, electronics, and more. Upgrade your
-            lifestyle with our premium collections, all in one place.
-          </p>
-          <div className="mt-4">
-            <button className="bg-blue-600 text-white py-3 px-6 rounded-lg font-medium text-lg hover:bg-blue-700">
-              Shop Now
-            </button>
-            <button className="bg-gray-200 text-gray-800 py-3 px-6 rounded-lg font-medium text-lg ml-4 hover:bg-gray-300">
-              Learn More
-            </button>
+          <div className="w-full lg:w-1/2 max-md:md-auto bg-black bg-opacity-50 p-20 gap-8 flex flex-col rounded-lg max-w-3xl">
+            <h1 className="text-4xl md:text-6xl font-bold text-white ">
+              Discover the Latest Trends
+            </h1>
+            <p className="text-lg md:text-2xl font-medium text-gray-200 mt-8 ">
+              Shop the best deals on fashion, electronics, and more. Upgrade
+              your lifestyle with our premium collections, all in one place.
+            </p>
+            <div className="mt-4">
+              <button className="bg-blue-600 text-white py-3 px-6 rounded-lg font-medium text-lg hover:bg-blue-700">
+                Shop Now
+              </button>
+              <button className="bg-gray-200 text-gray-800 py-3 px-6 rounded-lg font-medium text-lg ml-4 hover:bg-gray-300">
+                Learn More
+              </button>
+            </div>
           </div>
-        </div>
         </div>
       </div>
     </>

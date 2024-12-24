@@ -1,4 +1,6 @@
-
+import { useState } from 'react'
+import Header from './Header'
+import About from './Catagory'
 import './App.css'
 import NavBar from './navBar'
 
@@ -7,7 +9,8 @@ function App() {
 
   return (
     <>
-      <NavBar />
+      <Header ></Header>
+      <About></About>
     </>
   )
 }
