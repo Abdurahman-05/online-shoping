@@ -18,7 +18,7 @@ const Header = () => {
   return (
     <>
       <div
-        className="w-full lg:h-screen h-fit pb-4 bg-cover bg-bottom "
+        className="w-full lg:h-fit h-fit pb-4 bg-cover bg-bottom "
         style={{ backgroundImage: `url(${bg})` }}
       >
         <div className="h-16 bg-transparent flex items-center justify-around">

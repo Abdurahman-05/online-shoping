@@ -2,15 +2,17 @@ import NavBar from "../navBar";
 
 const UserDetails = () => {
   return (
-    <section className=" w-full h-screen flex flex-col justify-center items-center">
-      <div className="w-full absolute top-0">
+    <section className=" w-full h-fit flex flex-col justify-center items-center">
+      <div className="w-full  top-0 ">
         <NavBar />
       </div>
-      <div className="w-full max-w-7xl pr-12 h-12  flex justify-end items-center">
-          <p className=" font-bold">Welcome! <span className=" text-[#DB4444]">Md Rimel</span></p>
+      <div className="w-full  max-w-7xl pr-12 mt-4 h-12  flex justify-end items-center">
+        <p className=" font-bold">
+          Welcome! <span className=" text-[#DB4444]">Md Rimel</span>
+        </p>
       </div>
-
-      <section className="w-1/2 h-3/4 max-h-[600px] bg-white rounded-lg shadow-lg flex flex-col px-16 pt-12 mt-4">
+      {/* */}
+      <section className="w-1/2 h-fit bg-white  max-h-[600px]  shadow-2xl drop-shadow-lg border-[#DB4444]  rounded-lg   flex flex-col px-16 pt-12 mt-4">
         <div className=" w-full ">
           <h1 className="text-xl font-[500] text-[#DB4444] ">
             Edit Your Profile
@@ -89,9 +91,11 @@ const UserDetails = () => {
           ></input>
         </div>
         <div className="w-full h-24 flex mt-4 gap-2 justify-end">
-          <div className=" w-[40%] h-24 flex  mt-4 gap-2">
-            <button className="w-1/3 h-12   rounded-sm hover:bg-[#dedede]">Cancel</button>
-            <button className="px-4 w-2/3 h-12 bg-[#DB4444] hover:bg-[#d65757] text-white rounded-sm">
+          <div className=" w-[40%] h-24 flex   mt-4 gap-2">
+            <button className="w-1/3 h-12 px-6 text-[#2C3E50] flex justify-center items-center  text-center  rounded-sm hover:bg-[#dedede]">
+              Cancel
+            </button>
+            <button className="px-4 w-2/3 h-12 bg-[#DB4444] rounded-sm hover:bg-[#d65757] text-white ">
               Save Changes
             </button>
           </div>

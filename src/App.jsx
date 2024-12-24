@@ -1,5 +1,6 @@
 import Header from './Pages/Header'
-import About from './Pages/Catagory'
+import Catagory from './Pages/Catagory'
+import About from './Pages/about'
 import Footer from './component/footer'
 import './App.css'
 import NavBar from './navBar'
@@ -12,6 +13,7 @@ function App() {
     <>
       {/* <Header ></Header>
       <About></About>
+      <Catagory/>
       <Footer /> */}
       <UserDetails />
     </>
