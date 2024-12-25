@@ -1,5 +1,6 @@
 import ProductCard from '../component/ProductCard';
-import NavBar from '../navBar';
+import NavBar from '../component/NavBar';
+import Footer from "../component/footer";
 
 
 function ProductListing() {
@@ -21,7 +22,18 @@ function ProductListing() {
           ))}
           
         </div>
+        <div className="w-full h-20 flex items-center justify-center gap-4 mt-8">
+          <button className="w-20 h-10 bg-[#DB4444] text-white rounded-md">
+            Prev
+          </button>
+          <button className="w-20 h-10 bg-[#DB4444] text-white rounded-md">
+            Next
+          </button>
+        </div>
       </section>
+      <div className=" w-full h-fit  bottom-0 mt-32">
+        <Footer />
+      </div>
     </section>
   )
 }

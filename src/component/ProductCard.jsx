@@ -1,8 +1,10 @@
-import start from "../assets/ProductCard_Icons/star.png";
 import img from "../assets/bg.jpg";
 import CartButton from "../component/CartButton";
+import Barkstart from "../assets/ProductCard_Icons/Vector.svg"
+import Lightstart from "../assets/ProductCard_Icons/StarLight.svg"
 
 const ProductCard = () => {
+  const rating = 4;
     const handlClick = () => {
         console.log("clicked");
     };
@@ -12,13 +14,15 @@ const ProductCard = () => {
         <img className="w-full h-full object-cover" src={img} alt="netimg" />
       </div>
       <div className="w-11/12  rounded-md">
-      <div className="w-full   flex flex-row justify-between items-center mt-2">
+      <div className="w-full   flex flex-row gap-24 items-center mt-2">
           <h1 className=" font-bold">Product Name</h1>
-          <div className="w-auto  flex  justify-between items-center">
-            <img className="w-5 h-5" src={start} alt="stars" />
-            <img className="w-5 h-5" src={start} alt="stars" />
-            <img className="w-5 h-5" src={start} alt="stars" />
-            <img className="w-5 h-5" src={start} alt="stars" />
+          <div className="w-6 h-6  flex  justify-center items-center">
+            {[...Array(rating)].map((_, index) => (
+              <img key={index} src={Lightstart} alt="start" />
+            ))}
+            {[...Array((5-rating))].map((_, index) => (
+              <img key={index} src={Barkstart} alt="start" />
+            ))}
           </div>
         </div>
         <h2 className=" font-bold">Product Price ETB</h2>
