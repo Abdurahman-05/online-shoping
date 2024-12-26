@@ -9,7 +9,7 @@ import img4 from "../assets/testImages/image 61.png";
 import img5 from "../assets/testImages/image 63.png";
 import car from "../assets/ProductCard_Icons/icon-delivery.svg";
 import Return from "../assets/ProductCard_Icons/Icon-return.svg";
-import Footer from "../component/footer";
+import Footer from "../component/Footer";
 import ProductCard from "../component/ProductCard";
 import { useState } from "react";
 
@@ -151,7 +151,7 @@ const ProductDetails = () => {
       </div>
       <div className="w-full h-fit grid grid-cols-4 gap-4  p-4 mt-6">
           {[...Array(num)].map((_, index) => (
-            <ProductCard key={index} />
+            <ProductCard key={index} products={[]} />
           ))}
           
         </div>

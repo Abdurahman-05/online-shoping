@@ -1,14 +1,14 @@
-import React from "react";
 import { useState } from "react";
-import Logo from "../assets/Logo.jpg";
 import cart from "../assets/Cart.svg";
 import user from "../assets/user.png";
 import bg from "../assets/bg1.jpg";
-import search from "../assets/search.svg";
+import search from "../assets/NavIcons/search.svg";
+import Catagory from "./Catagory";
+import Footer from "../component/Footer";
 
 const data = [
   { name: "Home", link: "#", id: 1 },
-  { name: "product", link: "#", id: 2 },
+  { name: "product", link: "/Products", id: 2 },
   { name: "Service", link: "#", id: 3 },
   { name: "Contuct us", link: "#", id: 4 },
   { name: "About", link: "#", id: 5 },
@@ -22,7 +22,9 @@ const Header = () => {
         style={{ backgroundImage: `url(${bg})` }}
       >
         <div className="h-16 bg-transparent flex items-center justify-around">
-          <div className="text-2xl text-[#2C3E50] font-extrabold  ">Ecommerce</div>
+          <div className="text-2xl text-[#2C3E50] font-extrabold  ">
+            Ecommerce
+          </div>
           <div>
             <ul className="lg:flex text-white font-medium space-x-6 hidden ">
               {data.map((item) => (
@@ -74,7 +76,10 @@ const Header = () => {
               your lifestyle with our premium collections, all in one place.
             </p>
             <div className="mt-4">
-              <button className="bg-blue-600 text-white py-3 px-6 rounded-lg font-medium text-lg hover:bg-blue-700">
+              <button
+                onClick={() => {setIsActive(2); window.location.href = "/Products"} }
+                className="bg-blue-600 text-white py-3 px-6 rounded-lg font-medium text-lg hover:bg-blue-700"
+              >
                 Shop Now
               </button>
               <button className="bg-gray-200 text-gray-800 py-3 px-6 rounded-lg font-medium text-lg ml-4 hover:bg-gray-300">
@@ -84,6 +89,8 @@ const Header = () => {
           </div>
         </div>
       </div>
+      <Catagory />
+      <Footer />
     </>
   );
 };

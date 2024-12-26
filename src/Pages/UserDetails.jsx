@@ -1,4 +1,5 @@
-import NavBar from "../navBar";
+import NavBar from "../component/NavBar";
+import Footer from "../component/footer";
 
 const UserDetails = () => {
   return (
@@ -11,7 +12,6 @@ const UserDetails = () => {
           Welcome! <span className=" text-[#DB4444]">Md Rimel</span>
         </p>
       </div>
-      {/* */}
       <section className="w-1/2 h-fit bg-white  max-h-[600px]  shadow-2xl drop-shadow-lg border-t-2  rounded-lg   flex flex-col px-16 pt-12 mt-4">
         <div className=" w-full ">
           <h1 className="text-xl font-[500] text-[#DB4444] ">
@@ -101,6 +101,9 @@ const UserDetails = () => {
           </div>
         </div>
       </section>
+      <div className=" w-full h-fit  bottom-0 mt-32">
+        <Footer />
+      </div>
     </section>
   );
 };

@@ -33,7 +33,7 @@ const NavBar = () => {
 
           <div className="  h-full flex justify-between gap-9 items-center">
             <li>
-              <a href="/home" className="nav-item">
+              <a href="/" className="nav-item">
                 Home
               </a>
             </li>
@@ -77,39 +77,39 @@ const NavBar = () => {
               </a>
             </li>
             <li
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-        className="relative"
-      >
-        <a href="/account" className="nav-item">
-          <img src={user} alt="user" className="nav-icon" />
-          {isMenuVisible && (
-            <div
-              ref={menuRef}
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
-              className="absolute top-10 right-4 w-[280px] h-fit bg-[#000000be] rounded-md flex flex-col justify-center items-center pt-5 pb-1"
+              className="relative z-20"
             >
-              <div className="w-full flex gap-4 justify-start items-center py-3 pl-6 hover:bg-[#000000]">
-                <img src={userIcon} alt="user" className="w-8 h-8" />
-                <h1 className="text-white">Manage My Account</h1>
-              </div>
-              <div className="w-full flex gap-4 justify-start items-center py-3 pl-6 hover:bg-[#000000]">
-                <img src={order} alt="order" className="w-8 h-8" />
-                <h1 className="text-white">My Order</h1>
-              </div>
-              <div className="w-full flex gap-4 justify-start items-center py-3 pl-6 hover:bg-[#000000]">
-                <img src={Review} alt="review" className="w-8 h-8" />
-                <h1 className="text-white">My Review</h1>
-              </div>
-              <div className="w-full flex gap-4 justify-start items-center py-3 pl-6 hover:bg-[#000000]">
-                <img src={Logout} alt="logout" className="w-8 h-8" />
-                <h1 className="text-white">Logout</h1>
-              </div>
-            </div>
-          )}
-        </a>
-      </li>
+              <a href="/account" className="nav-item">
+                <img src={user} alt="user" className="nav-icon" />
+                {isMenuVisible && (
+                  <div
+                    ref={menuRef}
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                    className="absolute top-10 right-4 w-[280px] h-fit bg-[#000000be] rounded-md flex flex-col justify-center items-center pt-5 pb-1"
+                  >
+                    <div className="w-full flex gap-4 justify-start items-center py-3 pl-6 hover:bg-[#000000]">
+                      <img src={userIcon} alt="user" className="w-8 h-8" />
+                      <h1 className="text-white">Manage My Account</h1>
+                    </div>
+                    <div className="w-full flex gap-4 justify-start items-center py-3 pl-6 hover:bg-[#000000]">
+                      <img src={order} alt="order" className="w-8 h-8" />
+                      <h1 className="text-white">My Order</h1>
+                    </div>
+                    <div className="w-full flex gap-4 justify-start items-center py-3 pl-6 hover:bg-[#000000]">
+                      <img src={Review} alt="review" className="w-8 h-8" />
+                      <h1 className="text-white">My Review</h1>
+                    </div>
+                    <div className="w-full flex gap-4 justify-start items-center py-3 pl-6 hover:bg-[#000000]">
+                      <img src={Logout} alt="logout" className="w-8 h-8" />
+                      <h1 className="text-white">Logout</h1>
+                    </div>
+                  </div>
+                )}
+              </a>
+            </li>
           </div>
         </ul>
       </nav>

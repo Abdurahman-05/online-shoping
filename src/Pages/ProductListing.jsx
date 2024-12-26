@@ -1,10 +1,45 @@
-import ProductCard from '../component/ProductCard';
-import NavBar from '../component/NavBar';
-import Footer from "../component/footer";
-
+import ProductCard from "../component/ProductCard";
+import NavBar from "../component/NavBar";
+import Footer from "../component/Footer";
+import axios from "axios";
+import { useState, useEffect, useCallback } from "react";
 
 function ProductListing() {
-  const num = 8
+  const [products, setProducts] = useState([]);
+  const [offset, setOffset] = useState(0);
+  const pageSize = 8; // Number of products per page
+  const category = ""; // Example category
+
+  const NextPage = () => {
+    setOffset(offset + 1);
+    fetchProducts();
+  };
+  const PrevPage = () => {
+    setOffset(offset - 1);
+    fetchProducts();
+  };
+
+  const fetchProducts = useCallback(async () => {
+    try {
+      const response = await axios.post(
+        "http://localhost:8080/Oline_Shopping_Platform_war_exploded/HomeProductListings",
+        {
+          category, //Electronics
+          pageSize, //8
+          offset, //2
+        }
+      );
+      setProducts(response.data);
+    } catch (error) {
+      console.error("Error fetching products:", error);
+    }
+  }, [category, offset]);
+
+  useEffect(() => {
+    fetchProducts();
+  }, [fetchProducts, offset]);
+
+  const num = 8;
   return (
     <section className=" w-full   h-fit  flex flex-col justify-center items-center">
       <div className="w-full   ">
@@ -18,15 +53,20 @@ function ProductListing() {
         </div>
         <div className="w-full h-fit grid grid-cols-4 gap-4  p-4 mt-6">
           {[...Array(num)].map((_, index) => (
-            <ProductCard key={index} />
+            <ProductCard key={index} products={products} />
           ))}
-          
         </div>
         <div className="w-full h-20 flex items-center justify-center gap-4 mt-8">
-          <button className="w-20 h-10 bg-[#DB4444] text-white rounded-md">
+          <button
+            onClick={PrevPage}
+            className="w-20 h-10 bg-[#DB4444] text-white rounded-md"
+          >
             Prev
           </button>
-          <button className="w-20 h-10 bg-[#DB4444] text-white rounded-md">
+          <button
+            onClick={NextPage}
+            className="w-20 h-10 bg-[#DB4444] text-white rounded-md"
+          >
             Next
           </button>
         </div>
@@ -35,7 +75,7 @@ function ProductListing() {
         <Footer />
       </div>
     </section>
-  )
+  );
 }
 
 export default ProductListing;
