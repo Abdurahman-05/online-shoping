@@ -11,7 +11,7 @@ import car from "../assets/ProductCard_Icons/icon-delivery.svg";
 import Return from "../assets/ProductCard_Icons/Icon-return.svg";
 import Footer from "../component/Footer";
 import ProductCard from "../component/ProductCard";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const ProductDetails = () => {
   const [amount, setAmount] = useState(1);
@@ -27,8 +27,43 @@ const ProductDetails = () => {
     setAmount(amount + 1);
   };
 
+  const [product, setProduct] = useState(null);
+  const [reviews, setReviews] = useState([]);
+  const [error, setError] = useState(null);
+  const productId = 1; // Assuming the product ID is 1
 
+  useEffect(() => {
+    const url =
+      "http://localhost:8080/Oline_Shopping_Platform_war_exploded/ProductDetailsServlet";
 
+    const fetchData = async () => {
+      try {
+        const response = await fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ id: productId }), // Sending productId in the request body
+        });
+
+        if (!response.ok) {
+          throw new Error(
+            `HTTP Error: ${response.status} ${response.statusText}`
+          );
+        }
+
+        const data = await response.json(); // Parse JSON response
+        setProduct(data.product);
+        setReviews(data.reviews);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        console.log("Product details fetched successfully", product, reviews);
+      }
+    };
+
+    fetchData();
+  }, [productId]);
 
   return (
     <section className=" w-full   h-fit  flex flex-col justify-center items-center">
@@ -99,13 +134,19 @@ const ProductDetails = () => {
           <hr className="w-full h-[2px] bg-[#00000036] " />
           <div className="w-full h-11 flex items-center justify-between">
             <div className="w-[38%] h-ful flex items-center  rounded-md overflow-hidden">
-              <button onClick={handlClickMinus} className="w-11 h-11 text-5xl bg-[#DB4444] text-white flex justify-center items-center pb-3 ">
+              <button
+                onClick={handlClickMinus}
+                className="w-11 h-11 text-5xl bg-[#DB4444] text-white flex justify-center items-center pb-3 "
+              >
                 -
               </button>
               <p className=" w-1/2  h-11 text-2xl flex justify-center items-center font-semibold  border border-[#000000cc] ">
                 {amount}
               </p>
-              <button onClick={handlClickPlus} className="w-11 h-11 text-5xl bg-[#DB4444] text-white flex justify-center items-center pb-3 ">
+              <button
+                onClick={handlClickPlus}
+                className="w-11 h-11 text-5xl bg-[#DB4444] text-white flex justify-center items-center pb-3 "
+              >
                 +
               </button>
             </div>
@@ -145,17 +186,17 @@ const ProductDetails = () => {
         </div>
       </section>
       <section className="w-full h-fit max-w-7xl flex flex-col mt-20">
-      <div className="w-full h-10 flex items-center gap-4">
+        <div className="w-full h-10 flex items-center gap-4">
           <div className="w-5 h-10 bg-[#DB4444] rounded-md "></div>
-          <h1 className="text-2xl text-[#DB4444] font-semibold">Related Products</h1>
-      </div>
-      <div className="w-full h-fit grid grid-cols-4 gap-4  p-4 mt-6">
+          <h1 className="text-2xl text-[#DB4444] font-semibold">
+            Related Products
+          </h1>
+        </div>
+        <div className="w-full h-fit grid grid-cols-4 gap-4  p-4 mt-6">
           {[...Array(num)].map((_, index) => (
             <ProductCard key={index} products={[]} />
           ))}
-          
         </div>
-
       </section>
       <div className=" w-full h-fit  bottom-0 mt-32">
         <Footer />

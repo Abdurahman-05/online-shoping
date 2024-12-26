@@ -7,8 +7,8 @@ import { useState, useEffect, useCallback } from "react";
 function ProductListing() {
   const [products, setProducts] = useState([]);
   const [offset, setOffset] = useState(0);
-  const pageSize = 8; // Number of products per page
-  const category = ""; // Example category
+  const pageSize = 8; 
+  const category = ""; 
 
   const NextPage = () => {
     setOffset(offset + 1);
@@ -24,9 +24,9 @@ function ProductListing() {
       const response = await axios.post(
         "http://localhost:8080/Oline_Shopping_Platform_war_exploded/HomeProductListings",
         {
-          category, //Electronics
-          pageSize, //8
-          offset, //2
+          category, 
+          pageSize, 
+          offset, 
         }
       );
       setProducts(response.data);
@@ -39,7 +39,6 @@ function ProductListing() {
     fetchProducts();
   }, [fetchProducts, offset]);
 
-  const num = 8;
   return (
     <section className=" w-full   h-fit  flex flex-col justify-center items-center">
       <div className="w-full   ">
@@ -52,9 +51,7 @@ function ProductListing() {
           </div>
         </div>
         <div className="w-full h-fit grid grid-cols-4 gap-4  p-4 mt-6">
-          {[...Array(num)].map((_, index) => (
-            <ProductCard key={index} products={products} />
-          ))}
+            <ProductCard  products={products} />
         </div>
         <div className="w-full h-20 flex items-center justify-center gap-4 mt-8">
           <button
