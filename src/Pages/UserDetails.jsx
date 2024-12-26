@@ -1,9 +1,10 @@
-import NavBar from "../navBar";
+import NavBar from "../component/NavBar";
+import Footer from "../component/footer";
 
 const UserDetails = () => {
   return (
     <section className=" w-full h-fit flex flex-col justify-center items-center">
-      <div className="w-full  top-0 ">
+      <div className="w-full ">
         <NavBar />
       </div>
       <div className="w-full  max-w-7xl pr-12 mt-4 h-12  flex justify-end items-center">
@@ -11,8 +12,7 @@ const UserDetails = () => {
           Welcome! <span className=" text-[#DB4444]">Md Rimel</span>
         </p>
       </div>
-      {/* */}
-      <section className="w-1/2 h-fit bg-white  max-h-[600px]  shadow-2xl drop-shadow-lg border-[#DB4444]  rounded-lg   flex flex-col px-16 pt-12 mt-4">
+      <section className="w-1/2 h-fit bg-white  max-h-[600px]  shadow-2xl drop-shadow-lg border-t-2  rounded-lg   flex flex-col px-16 pt-12 mt-4">
         <div className=" w-full ">
           <h1 className="text-xl font-[500] text-[#DB4444] ">
             Edit Your Profile
@@ -101,6 +101,9 @@ const UserDetails = () => {
           </div>
         </div>
       </section>
+      <div className=" w-full h-fit  bottom-0 mt-32">
+        <Footer />
+      </div>
     </section>
   );
 };
