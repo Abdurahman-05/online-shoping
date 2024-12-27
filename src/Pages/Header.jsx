@@ -5,7 +5,7 @@ import bg from "../assets/bg1.jpg";
 import search from "../assets/NavIcons/search.svg";
 import Catagory from "./Catagory";
 import Footer from "../component/Footer";
-
+import About from './about';
 const data = [
   { name: "Home", link: "#", id: 1 },
   { name: "product", link: "/Products", id: 2 },
@@ -90,6 +90,7 @@ const Header = () => {
         </div>
       </div>
       <Catagory />
+      <About/>
       <Footer />
     </>
   );
